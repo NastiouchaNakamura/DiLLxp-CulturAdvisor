@@ -6,7 +6,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():  # put application's code here
-    culturecheznous.fetch()
+    resources = culturecheznous.fetch()
+
+    for resource in resources:
+        print(resource.fields)
     return 'Hello World!'
 
 
