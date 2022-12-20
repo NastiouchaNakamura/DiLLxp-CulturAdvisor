@@ -48,18 +48,10 @@ def fetch() -> List[Resource]:
                 # -> culturecheznous
                 resource.fields["source"] = record["datasetid"]
 
-                # Identifiant
-                # ID de record
-                resource.fields["identifiant"] = record["recordid"]
-
-                # Organisme
-                if "nom_de_l_organisme" in record["fields"]:
-                    resource.fields["organisme"] = record["fields"]["nom_de_l_organisme"]
-
                 # Titre
                 if "titre_de_la_ressource" in record["fields"]:
                     resource.fields["titre"] = record["fields"]["titre_de_la_ressource"]
-
+               
                 # Description
                 if "description_des_contenus_et_de_l_experience_proposes_min_200_max_500_caracteres" in record["fields"]:
                     resource.fields["description"] = record["fields"]["description_des_contenus_et_de_l_experience_proposes_min_200_max_500_caracteres"]
@@ -68,6 +60,21 @@ def fetch() -> List[Resource]:
                 if "lien_vers_la_ressource" in record["fields"]:
                     # Sur CultureChezNous il n'y a qu'un seul lien.
                     resource.fields["liens"] = [record["fields"]["lien_vers_la_ressource"]] # Certaines ressources d'autres sources peuvent avoir plusieurs liens
+
+
+                # Géolocalisation
+                # Certaines resources n'ont pas de géolocalisation
+                if "geolocalisation_ban" in record["fields"]:
+                    resource.fields["geolocalisation"] = record["fields"]["geolocalisation_ban"]
+
+                # Identifiant
+                # ID de record
+                resource.fields["identifiant"] = record["recordid"]
+
+                # Organisme
+                if "nom_de_l_organisme" in record["fields"]:
+                    resource.fields["organisme"] = record["fields"]["nom_de_l_organisme"]
+
 
                 # Public cible
                 if "public_cible" in record["fields"]:
@@ -102,11 +109,6 @@ def fetch() -> List[Resource]:
                     resource.fields["code_postal"] = record["fields"]["code_postal"]
                 if "commune" in record["fields"]:
                     resource.fields["commune"] = record["fields"]["commune"]
-
-                # Géolocalisation
-                # Certaines resources n'ont pas de géolocalisation
-                if "geolocalisation_ban" in record["fields"]:
-                    resource.fields["geolocalisation"] = record["fields"]["geolocalisation_ban"]
 
                 # Type de ressource
                 if "types_de_ressources_proposees" in record["fields"]:

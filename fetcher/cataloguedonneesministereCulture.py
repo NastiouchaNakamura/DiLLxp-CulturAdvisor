@@ -50,11 +50,10 @@ def fetch() -> List[Resource]:
                 # Création de l'objet Resource
                 resource = Resource()
 
-                """# Source
+                # Source
                 # -> catalogue-des-donnees-du-ministere-de-la-culture
-                resource.fields["source"] = record["datasetid"]"""
+                resource.fields["source"] = record["datasetid"]
 
-                
                 # Titre
                 if "titre" in record["fields"]:
                     resource.fields["titre"] = record["fields"]["titre"]
@@ -73,6 +72,17 @@ def fetch() -> List[Resource]:
                 # Lien2
                 if "lien2" in record["fields"]:
                     resource.fields["liens"] = record["fields"]["lien2"]
+                resources.append(resource)
+
+
+                # Donnees_geolocalisees
+                if "donnees_geolocalisees" in record["fields"]:
+                    resource.fields["donnees_geolocalise"] = record["fields"]["donnees_geolocalisees"]
+                resources.append(resource)
+
+                # identifiant
+                if "identifiant" in record["fields"]:
+                    resource.fields["identifiant"] = record["fields"]["identifiant"]
                 resources.append(resource)
 
                 # Domaine
@@ -120,10 +130,6 @@ def fetch() -> List[Resource]:
                     resource.fields["mots_cles"] = record["fields"]["mots_cles"]
                 resources.append(resource)
 
-                # Donnees_geolocalisees
-                if "donnees_geolocalisees" in record["fields"]:
-                    resource.fields["donnees_geolocalisees"] = record["fields"]["donnees_geolocalisees"]
-                resources.append(resource)
 
                 # Couverture_geographique
                 if "couverture_geographique" in record["fields"]:
