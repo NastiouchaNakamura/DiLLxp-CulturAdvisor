@@ -1,15 +1,18 @@
 from flask import Flask
-from fetcher import culturecheznous
-
+from fetcher import culturecheznous, cataloguedonneesministereCulture
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():  # put application's code here
-    resources = culturecheznous.fetch()
+    resources1 = culturecheznous.fetch()
+    resources2 = cataloguedonneesministereCulture.fetch()
 
-    for resource in resources:
-        print(resource.fields)
+    for resource1 in resources1:
+        print(resource1.fields)
+    for resource2 in resources2:
+        print(resource2.fields)
+
     return 'Hello World!'
 
 
