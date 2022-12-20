@@ -1,6 +1,9 @@
 from flask import Flask
 from fetcher import culturecheznous, cataloguedonneesministereCulture
 import pandas as pd
+import numpy as np
+import sqlite3
+import csv
 app = Flask(__name__)
 
 
@@ -11,24 +14,29 @@ def hello_world():  # put application's code here
 
     res1 = []
     for resource1 in resources1:
-        print(resource1.fields)
+        #print(resource1.fields)
         if resource1.fields not in res1: # supprimer les doublons
             res1.append(resource1.fields)
         
     res2 = []    
     for resource2 in resources2:
-        print(resource2.fields)
+        #print(resource2.fields)
         if resource2.fields not in res2:
             res2.append(resource2.fields)
 
-    df1 = pd.DataFrame(res1) # convertir en dataframe
+    # convertir en dataframe
+    df1 = pd.DataFrame(res1) 
     print(df1)  
     df2 = pd.DataFrame(res2)
     print(df2)  
 
+    # concatener les 2 BDD
     frames = [df1, df2]
     result = pd.concat(frames)
     print(result)
+
+    # créer un fichier csv des données
+    result.to_csv('culture.csv', sep ='\t') 
 
     return 'Hello World!'
 
