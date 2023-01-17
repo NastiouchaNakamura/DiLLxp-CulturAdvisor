@@ -1,5 +1,5 @@
 from flask import Flask
-from fetcher import culturecheznous, cataloguedonneesministereCulture
+from fetcher import culturecheznous, cataloguedonneesministereCulture, listefestivalfrance
 import pandas as pd
 import numpy as np
 import sqlite3
@@ -11,6 +11,10 @@ app = Flask(__name__)
 def hello_world():  # put application's code here
     resources1 = culturecheznous.fetch()
     resources2 = cataloguedonneesministereCulture.fetch()
+    ressources3 = listefestivalfrance.fetch()
+
+    for resource in ressources3:
+        print(resource.fields)
 
     res1 = []
     for resource1 in resources1:
@@ -26,14 +30,14 @@ def hello_world():  # put application's code here
 
     # convertir en dataframe
     df1 = pd.DataFrame(res1) 
-    print(df1)  
+    #print(df1)  
     df2 = pd.DataFrame(res2)
-    print(df2)  
+    #print(df2)  
 
     # concatener les 2 BDD
     frames = [df1, df2]
     result = pd.concat(frames)
-    print(result)
+    #print(result)
 
     # créer un fichier csv des données
     result.to_csv('culture.csv', sep ='\t') 
