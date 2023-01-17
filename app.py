@@ -11,10 +11,10 @@ app = Flask(__name__)
 def hello_world():  # put application's code here
     resources1 = culturecheznous.fetch()
     resources2 = cataloguedonneesministereCulture.fetch()
-    ressources3 = listefestivalfrance.fetch()
+    resources3 = listefestivalfrance.fetch()
 
-    for resource in ressources3:
-        print(resource.fields)
+    #for resource in resources1:
+    #    print(resource.fields)
 
     res1 = []
     for resource1 in resources1:
@@ -28,16 +28,24 @@ def hello_world():  # put application's code here
         if resource2.fields not in res2:
             res2.append(resource2.fields)
 
+    res3 = []
+    for resource3 in resources3:
+        #print(resource1.fields)
+        if resource3.fields not in res3: # supprimer les doublons
+            res3.append(resource3.fields)
+     
     # convertir en dataframe
     df1 = pd.DataFrame(res1) 
-    #print(df1)  
+    print(df1)  
     df2 = pd.DataFrame(res2)
-    #print(df2)  
+    print(df2)  
+    df3 = pd.DataFrame(res3)
+    print(df3) 
 
     # concatener les 2 BDD
-    frames = [df1, df2]
+    frames = [df1, df2, df3]
     result = pd.concat(frames)
-    #print(result)
+    print(result)
 
     # créer un fichier csv des données
     result.to_csv('culture.csv', sep ='\t') 

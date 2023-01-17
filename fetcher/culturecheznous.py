@@ -15,23 +15,24 @@ page_size = 512
 def fetch() -> List[Resource]:
     """
     Champs renseignés :
-    - accessibilite
+    - organisme
+    - titre
+    - liens
+    - description
     - activite
+    - public_cible
+    - niveau scolaire enfant
+    - types ressource
+    - thematiques
+    - contenue adapte
+    - perenite ressource
+    - temps activite
+    - rattachement organisme
     - adresse
     - code_postal
     - commune
-    - description
-    - duree
-    - geolocalisation
     - identifiant
-    - liens[]
-    - organisme
-    - public_cible
-    - rattachement
-    - source
-    - thematiques[]
-    - titre
-    - types
+    - geolocalisation
     """
     resources = []
 
@@ -59,27 +60,28 @@ def fetch() -> List[Resource]:
                 # Liens
                 if "lien_vers_la_ressource" in record["fields"]:
                     # Sur CultureChezNous il n'y a qu'un seul lien.
-                    resource.fields["liens"] = [record["fields"]["lien_vers_la_ressource"]] # Certaines ressources d'autres sources peuvent avoir plusieurs liens
+                    resource.fields["site internet"] = [record["fields"]["lien_vers_la_ressource"]] # Certaines ressources d'autres sources peuvent avoir plusieurs liens
 
+                # Identifiant
+                # ID de record
+                resource.fields["identifiant"] = record["recordid"]
+
+                # code postal
+                if "code_postal" in record["fields"]:
+                    resource.fields["code postal"] = record["fields"]["code_postal"]
 
                 # Géolocalisation
                 # Certaines resources n'ont pas de géolocalisation
                 if "geolocalisation_ban" in record["fields"]:
                     resource.fields["geolocalisation"] = record["fields"]["geolocalisation_ban"]
 
-                # Identifiant
-                # ID de record
-                resource.fields["identifiant"] = record["recordid"]
-
-                # Organisme
-                if "nom_de_l_organisme" in record["fields"]:
-                    resource.fields["organisme"] = record["fields"]["nom_de_l_organisme"]
-
-
-                # Public cible
-                if "public_cible" in record["fields"]:
-                    # {'Parents / Éducateurs', 'Tous publics', 'Enfants'}
-                    resource.fields["public_cible"] = record["fields"]["public_cible"]
+                # Adresse
+                if "adresse_de_l_organisme" in record["fields"]:
+                    resource.fields["adresse"] = record["fields"]["adresse_de_l_organisme"]
+                
+                # commune
+                if "commune" in record["fields"]:
+                    resource.fields["commune"] = record["fields"]["commune"]
 
                 # Thématiques
                 if "thematiques" in record["fields"]:
@@ -92,36 +94,47 @@ def fetch() -> List[Resource]:
                     # 'Sciences', 'Sculpture', 'Théâtre, Spectacles', 'Éducation artistique et culturelle',
                     # 'Éducation aux médias']
                     # /!\ Thématique "Vidéo, flux en direct, programmes en différé;;;;;;;;" par exemple
-                    resource.fields["thematiques"] = record["fields"]["thematiques"].split(";")
+                    resource.fields["domaine"] = record["fields"]["thematiques"].split(";")
 
-                # Durée
+                # Organisme
+                if "nom_de_l_organisme" in record["fields"]:
+                    resource.fields["organisme"] = record["fields"]["nom_de_l_organisme"]
+
+
+                # Public cible
+                if "public_cible" in record["fields"]:
+                    # {'Parents / Éducateurs', 'Tous publics', 'Enfants'}
+                    resource.fields["public_cible"] = record["fields"]["public_cible"]
+
+                # temps activite
                 if "temps_d_activite_estime_lecture_ecoute_visionnage_jeu" in record["fields"]:
-                    resource.fields["duree"] = record["fields"]["temps_d_activite_estime_lecture_ecoute_visionnage_jeu"]
+                    resource.fields["temps activite"] = record["fields"]["temps_d_activite_estime_lecture_ecoute_visionnage_jeu"]
 
-                # Rattachement
+                # Rattachement organisme
                 if "rattachement_de_l_organisme" in record["fields"]:
-                    resource.fields["rattachement"] = record["fields"]["rattachement_de_l_organisme"]
+                    resource.fields["rattachement organisme"] = record["fields"]["rattachement_de_l_organisme"]
 
-                # Adresse
-                if "adresse_de_l_organisme" in record["fields"]:
-                    resource.fields["adresse"] = record["fields"]["adresse_de_l_organisme"]
-                if "code_postal" in record["fields"]:
-                    resource.fields["code_postal"] = record["fields"]["code_postal"]
-                if "commune" in record["fields"]:
-                    resource.fields["commune"] = record["fields"]["commune"]
-
-                # Type de ressource
+                # Type ressource
                 if "types_de_ressources_proposees" in record["fields"]:
-                    resource.fields["types"] = record["fields"]["types_de_ressources_proposees"]
+                    resource.fields["types ressource"] = record["fields"]["types_de_ressources_proposees"]
 
-                # Accessibilité
-                if "types_de_ressources_proposees" in record["fields"]:
-                    resource.fields["accessibilite"] = record["fields"]["types_de_ressources_proposees"]
+                # niveau scolaire enfant
+                if "si_enfants_merci_de_preciser_le_niveau_scolaire" in record["fields"]:
+                    resource.fields["niveau scolaire enfant"] = record["fields"]["si_enfants_merci_de_preciser_le_niveau_scolaire"]
 
                 # Activités
                 if "activite_proposee_apprendre_se_divertir_s_informer" in record["fields"]:
                     resource.fields["activite"] = record["fields"]["activite_proposee_apprendre_se_divertir_s_informer"]
 
+                # contenue adapte
+                if "contenus_adaptes_aux_types_de_handicap" in record["fields"]:
+                    resource.fields["contenue adapte"] = record["fields"]["contenus_adaptes_aux_types_de_handicap"]
+
+                # perenite ressource
+                if "accessibilite_perennite_de_la_ressource" in record["fields"]:
+                    resource.fields["perenite ressource"] = record["fields"]["accessibilite_perennite_de_la_ressource"]
+
+                
                 resources.append(resource)
 
         params["start"] += page_size
