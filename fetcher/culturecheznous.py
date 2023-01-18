@@ -33,6 +33,8 @@ def fetch() -> List[Resource]:
     - commune
     - identifiant
     - geolocalisation
+    - autre thematique xxxxxxx
+    - limite dans le temps xxxxxx
     """
     resources = []
 
