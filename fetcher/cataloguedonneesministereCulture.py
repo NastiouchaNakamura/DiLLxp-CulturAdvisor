@@ -86,13 +86,13 @@ def fetch() -> List[Resource]:
                 if "domaine" in record["fields"]:
                     resource.fields["domaine"] = record["fields"]["domaine"]
 
+                # Sous-domaine
+                if "sous_domaine" in record["fields"]:
+                    resource.fields["sous domaine"] = record["fields"]["sous_domaine"]
+
                 # Donnees_geolocalisees
                 if "donnees_geolocalisees" in record["fields"]:
                     resource.fields["donnees_geolocalise"] = record["fields"]["donnees_geolocalisees"]
-
-                # Sous-domaine
-                if "sous_domaine" in record["fields"]:
-                    resource.fields["sous_domaine"] = record["fields"]["sous_domaine"]
 
                 # Producteur
                 if "type_de_producteur" in record["fields"]:

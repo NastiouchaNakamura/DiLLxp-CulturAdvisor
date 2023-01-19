@@ -99,19 +99,15 @@ def fetch() -> List[Resource]:
 
                 # region principale
                 if "region_principale_de_deroulement" in record["fields"]:
-                    resource.fields["region principale"] = record["fields"]["region_principale_de_deroulement"]
+                    resource.fields["region"] = record["fields"]["region_principale_de_deroulement"]
 
                 # departement principal
                 if "departement_principal_de_deroulement" in record["fields"]:
-                    resource.fields["departement principal"] = record["fields"]["departement_principal_de_deroulement"]
-
-                # periode principale
-                if "periode_principale_de_deroulement_du_festival" in record["fields"]:
-                    resource.fields["periode principale"] = record["fields"]["periode_principale_de_deroulement_du_festival"]
+                    resource.fields["departement"] = record["fields"]["departement_principal_de_deroulement"]
 
                 # code insee commune
                 if "code_insee_commune" in record["fields"]:
-                    resource.fields["code insee commune"] = record["fields"]["code_insee_commune"]
+                    resource.fields["code insee"] = record["fields"]["code_insee_commune"]
 
                 # code insee EPCI
                 if "code_insee_epci_collage_en_valeur" in record["fields"]:
@@ -120,6 +116,10 @@ def fetch() -> List[Resource]:
                 # libelle EPCI
                 if "libelle_epci_collage_en_valeur" in record["fields"]:
                     resource.fields["libelle EPCI"] = record["fields"]["libelle_epci_collage_en_valeur"]
+
+                # periode principale
+                if "periode_principale_de_deroulement_du_festival" in record["fields"]:
+                    resource.fields["periode principale"] = record["fields"]["periode_principale_de_deroulement_du_festival"]
 
                 # numero de voie
                 if "numero_de_voie" in record["fields"]:

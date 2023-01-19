@@ -75,54 +75,39 @@ def fetch() -> List[Resource]:
             # -> base-des-lieux-et-des-equipements-culturels
             resource.fields["source"] = record["datasetid"]
 
-            # type equipement lieux
-            if "type_equipement_ou_lieu" in record["fields"]:
-                resource.fields["type equipement lieux"] = record["fields"]["type_equipement_ou_lieu"]
              
-            # precision equipement
-            if "precision_equipement" in record["fields"]:
-                resource.fields["precision equipement"] = record["fields"]["precision_equipement"]
+            # ident
+            if "ident" in record["fields"]:
+                resource.fields["identifiant"] = record["fields"]["ident"]
              
+            # code postal
+            if "code_postal" in record["fields"]:
+                resource.fields["code postal"] = record["fields"]["code_postal"]
+              
             # nom
             if "nom" in record["fields"]:
-                resource.fields["nom"] = record["fields"]["nom"]
+                resource.fields["titre"] = record["fields"]["nom"]
              
-            # label
-            if "label_et_appellation" in record["fields"]:
-                resource.fields["label"] = record["fields"]["label_et_appellation"]
-             
-            # domaine
-            if "domaine" in record["fields"]:
-                resource.fields["domaine"] = record["fields"]["domaine"]
-             
-            # sous domaine
-            if "sous_domaines" in record["fields"]:
-                resource.fields["sous domaine"] = record["fields"]["sous_domaines"]
-             
+            # coordonnees GPS
+            if "coordonnees_gps_lat_lon" in record["fields"]:
+                resource.fields["geolocalisation"] = record["fields"]["coordonnees_gps_lat_lon"]
+                        
             # adresse
             if "adresse" in record["fields"]:
                 resource.fields["adresse"] = record["fields"]["adresse"]
              
             # libele geographique
             if "libelle_geographique" in record["fields"]:
-                resource.fields["libele geographique"] = record["fields"]["libelle_geographique"]
-             
-            # code postal
-            if "code_postal" in record["fields"]:
-                resource.fields["code postal"] = record["fields"]["code_postal"]
-             
-            # adresse postal
-            if "adresse_postale" in record["fields"]:
-                resource.fields["adresse postal"] = record["fields"]["adresse_postale"]
-             
-            # code insee
-            if "code_insee" in record["fields"]:
-                resource.fields["code insee"] = record["fields"]["code_insee"]
-             
-            # code insee Arrondt
-            if "code_insee_arrondt" in record["fields"]:
-                resource.fields["code insee Arrondt"] = record["fields"]["code_insee_arrondt"]
-             
+                resource.fields["commune"] = record["fields"]["libelle_geographique"]
+               
+            # domaine
+            if "domaine" in record["fields"]:
+                resource.fields["domaine"] = record["fields"]["domaine"]
+
+            # sous domaine
+            if "sous_domaines" in record["fields"]:
+                resource.fields["sous domaine"] = record["fields"]["sous_domaines"]
+  
             # region
             if "region" in record["fields"]:
                 resource.fields["region"] = record["fields"]["region"]
@@ -131,6 +116,34 @@ def fetch() -> List[Resource]:
             if "departement" in record["fields"]:
                 resource.fields["departement"] = record["fields"]["departement"]
              
+            # code insee Arrondt
+            if "code_insee_arrondt" in record["fields"]:
+                resource.fields["code insee"] = record["fields"]["code_insee_arrondt"]
+            
+            # code insee
+            if "code_insee" in record["fields"]:
+                resource.fields["code insee"] = record["fields"]["code_insee"]
+             
+            # code insee EPCI
+            if "code_insee_epci" in record["fields"]:
+                resource.fields["code insee EPCI"] = record["fields"]["code_insee_epci"] 
+            
+            # type equipement lieux
+            if "type_equipement_ou_lieu" in record["fields"]:
+                resource.fields["type equipement lieux"] = record["fields"]["type_equipement_ou_lieu"]
+             
+            # precision equipement
+            if "precision_equipement" in record["fields"]:
+                resource.fields["precision equipement"] = record["fields"]["precision_equipement"]
+            
+            # label
+            if "label_et_appellation" in record["fields"]:
+                resource.fields["label"] = record["fields"]["label_et_appellation"]
+           
+            # adresse postal
+            if "adresse_postale" in record["fields"]:
+                resource.fields["adresse postal"] = record["fields"]["adresse_postale"]
+         
             # source
             if "source" in record["fields"]:
                 resource.fields["sources"] = record["fields"]["source"]
@@ -203,18 +216,10 @@ def fetch() -> List[Resource]:
             if "surface_bibliotheque" in record["fields"]:
                 resource.fields["surface bibliotheque"] = record["fields"]["surface_bibliotheque"]
              
-            # coordonnees GPS
-            if "coordonnees_gps_lat_lon" in record["fields"]:
-                resource.fields["coordonnees GPS"] = record["fields"]["coordonnees_gps_lat_lon"]
-             
             # rang
             if "rang" in record["fields"]:
                 resource.fields["rang"] = record["fields"]["rang"]
-             
-            # ident
-            if "ident" in record["fields"]:
-                resource.fields["ident"] = record["fields"]["ident"]
-             
+
             # identifiant deps
             if "identifiant_deps_a_partir_de_2022" in record["fields"]:
                 resource.fields["identifiant deps"] = record["fields"]["identifiant_deps_a_partir_de_2022"]
@@ -223,10 +228,6 @@ def fetch() -> List[Resource]:
             if "libelle_epci" in record["fields"]:
                 resource.fields["libelle EPCI"] = record["fields"]["libelle_epci"]
              
-            # code insee EPCI
-            if "code_insee_epci" in record["fields"]:
-                resource.fields["code insee EPCI"] = record["fields"]["code_insee_epci"] 
-            
 
             resources.append(resource)
 
