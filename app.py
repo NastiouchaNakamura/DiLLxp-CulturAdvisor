@@ -16,6 +16,7 @@ def hello_world():  # put application's code here
 
     #for resource in resources4:
     #    print(resource.fields)
+
   
 
     res1 = []
