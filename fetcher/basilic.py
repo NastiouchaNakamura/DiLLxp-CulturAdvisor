@@ -226,19 +226,6 @@ def fetch() -> List[Resource]:
             # code insee EPCI
             if "code_insee_epci" in record["fields"]:
                 resource.fields["code insee EPCI"] = record["fields"]["code_insee_epci"] 
-
-            # demographie entree
-            if "region" in record["fields"]:
-                resource.fields["demographie entree"] = record["fields"]["region"] 
-            
-            # demographie sortie
-            if "region" in record["fields"]:
-                resource.fields["demographie sortie"] = record["fields"]["region"] 
-            
-            # demographie detail
-            if "region" in record["fields"]:
-                resource.fields["demographie detail"] = record["fields"]["region"] 
-            
             
 
             resources.append(resource)

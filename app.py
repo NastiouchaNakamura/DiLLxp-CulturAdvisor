@@ -16,6 +16,7 @@ def hello_world():  # put application's code here
 
     #for resource in resources4:
     #    print(resource.fields)
+  
 
     res1 = []
     for resource1 in resources1:
@@ -40,7 +41,7 @@ def hello_world():  # put application's code here
         #print(resource1.fields)
         if resource4.fields not in res4: # supprimer les doublons
             res4.append(resource4.fields)
-      
+
     # convertir en dataframe
     df1 = pd.DataFrame(res1) 
     print(df1)  
@@ -50,6 +51,7 @@ def hello_world():  # put application's code here
     print(df3) 
     df4 = pd.DataFrame(res4)
     print(df4) 
+
 
     # concatener les 2 BDD
     frames = [df1, df2, df3,df4]
