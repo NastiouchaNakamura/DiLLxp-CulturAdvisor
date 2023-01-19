@@ -1,5 +1,5 @@
 from flask import Flask
-from fetcher import culturecheznous, cataloguedonneesministereCulture, listefestivalfrance, basilic
+from fetcher import culturecheznous, cataloguedonneesministereCulture, listefestivalfrance, basilic, eurelien
 import pandas as pd
 import numpy as np
 import sqlite3
@@ -13,8 +13,9 @@ def hello_world():  # put application's code here
     resources2 = cataloguedonneesministereCulture.fetch()
     resources3 = listefestivalfrance.fetch()
     resources4 = basilic.fetch()
+    resources5 = eurelien.fetch()
 
-    #for resource in resources4:
+    #for resource in resources5:
     #    print(resource.fields)
 
   
@@ -43,6 +44,12 @@ def hello_world():  # put application's code here
         if resource4.fields not in res4: # supprimer les doublons
             res4.append(resource4.fields)
 
+    res5 = []
+    for resource5 in resources5:
+        #print(resource1.fields)
+        if resource5.fields not in res5: # supprimer les doublons
+            res5.append(resource5.fields)
+
     # convertir en dataframe
     df1 = pd.DataFrame(res1) 
     print(df1)  
@@ -52,16 +59,16 @@ def hello_world():  # put application's code here
     print(df3) 
     df4 = pd.DataFrame(res4)
     print(df4) 
+    df5 = pd.DataFrame(res5)
+    print(df5) 
 
 
     # concatener les 2 BDD
-    frames = [df1, df2, df3,df4]
+    frames = [df1, df2, df3,df4,df5]
     result = pd.concat(frames)
     print(result)
 
-    # créer un fichier csv des données
-    result.to_csv('culture.csv', sep ='\t') 
-
+    
     return 'Hello World!'
 
 
