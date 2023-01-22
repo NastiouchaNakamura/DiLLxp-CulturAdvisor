@@ -62,7 +62,7 @@ def fetch() -> List[Resource]:
                 # Liens
                 if "lien_vers_la_ressource" in record["fields"]:
                     # Sur CultureChezNous il n'y a qu'un seul lien.
-                    resource.fields["site internet"] = [record["fields"]["lien_vers_la_ressource"]] # Certaines ressources d'autres sources peuvent avoir plusieurs liens
+                    resource.fields["site_internet"] = [record["fields"]["lien_vers_la_ressource"]] # Certaines ressources d'autres sources peuvent avoir plusieurs liens
 
                 # Identifiant
                 # ID de record
@@ -70,7 +70,7 @@ def fetch() -> List[Resource]:
 
                 # code postal
                 if "code_postal" in record["fields"]:
-                    resource.fields["code postal"] = record["fields"]["code_postal"]
+                    resource.fields["code_postal"] = record["fields"]["code_postal"]
 
                 # Géolocalisation
                 # Certaines resources n'ont pas de géolocalisation
@@ -110,19 +110,19 @@ def fetch() -> List[Resource]:
 
                 # temps activite
                 if "temps_d_activite_estime_lecture_ecoute_visionnage_jeu" in record["fields"]:
-                    resource.fields["temps activite"] = record["fields"]["temps_d_activite_estime_lecture_ecoute_visionnage_jeu"]
+                    resource.fields["temps_activite"] = record["fields"]["temps_d_activite_estime_lecture_ecoute_visionnage_jeu"]
 
                 # Rattachement organisme
                 if "rattachement_de_l_organisme" in record["fields"]:
-                    resource.fields["rattachement organisme"] = record["fields"]["rattachement_de_l_organisme"]
+                    resource.fields["rattachement_organisme"] = record["fields"]["rattachement_de_l_organisme"]
 
                 # Type ressource
                 if "types_de_ressources_proposees" in record["fields"]:
-                    resource.fields["types ressource"] = record["fields"]["types_de_ressources_proposees"]
+                    resource.fields["types_ressource"] = record["fields"]["types_de_ressources_proposees"]
 
                 # niveau scolaire enfant
                 if "si_enfants_merci_de_preciser_le_niveau_scolaire" in record["fields"]:
-                    resource.fields["niveau scolaire enfant"] = record["fields"]["si_enfants_merci_de_preciser_le_niveau_scolaire"]
+                    resource.fields["niveau_scolaire_enfant"] = record["fields"]["si_enfants_merci_de_preciser_le_niveau_scolaire"]
 
                 # Activités
                 if "activite_proposee_apprendre_se_divertir_s_informer" in record["fields"]:
@@ -130,11 +130,11 @@ def fetch() -> List[Resource]:
 
                 # contenue adapte
                 if "contenus_adaptes_aux_types_de_handicap" in record["fields"]:
-                    resource.fields["contenue adapte"] = record["fields"]["contenus_adaptes_aux_types_de_handicap"]
+                    resource.fields["contenue_adapte"] = record["fields"]["contenus_adaptes_aux_types_de_handicap"]
 
                 # perenite ressource
                 if "accessibilite_perennite_de_la_ressource" in record["fields"]:
-                    resource.fields["perenite ressource"] = record["fields"]["accessibilite_perennite_de_la_ressource"]
+                    resource.fields["perenite_ressource"] = record["fields"]["accessibilite_perennite_de_la_ressource"]
 
                 
                 resources.append(resource)

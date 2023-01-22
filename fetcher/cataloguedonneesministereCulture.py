@@ -64,11 +64,11 @@ def fetch() -> List[Resource]:
 
                 # Lien1
                 if "lien1" in record["fields"]:
-                    resource.fields["site internet"] = record["fields"]["lien1"]
+                    resource.fields["site_internet"] = record["fields"]["lien1"]
 
                 # Lien2
                 if "lien2" in record["fields"]:
-                    resource.fields["site internet"] = record["fields"]["lien2"]
+                    resource.fields["site_internet"] = record["fields"]["lien2"]
 
                 # identifiant
                 if "identifiant" in record["fields"]:
@@ -76,7 +76,7 @@ def fetch() -> List[Resource]:
 
                 # Boite_fonctionnelle
                 if "boite_fonctionnelle" in record["fields"]:
-                    resource.fields["adresse mail"] = record["fields"]["boite_fonctionnelle"]
+                    resource.fields["adresse_mail"] = record["fields"]["boite_fonctionnelle"]
 
                 # Couverture_geographique
                 if "couverture_geographique" in record["fields"]:
@@ -88,7 +88,7 @@ def fetch() -> List[Resource]:
 
                 # Sous-domaine
                 if "sous_domaine" in record["fields"]:
-                    resource.fields["sous domaine"] = record["fields"]["sous_domaine"]
+                    resource.fields["sous_domaine"] = record["fields"]["sous_domaine"]
 
                 # Donnees_geolocalisees
                 if "donnees_geolocalisees" in record["fields"]:
