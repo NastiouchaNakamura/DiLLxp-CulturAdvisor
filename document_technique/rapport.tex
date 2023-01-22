@@ -1,0 +1,93 @@
+\documentclass{article} % indique qu'on veut écrire un arcticle
+\usepackage{xcolor}
+\usepackage{graphicx}%pour importer des images
+\usepackage{caption} % pour mattre une legende en dessous des images
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc} % pour avoir les accent ect...
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel} % pour que ce soit écrit en francais
+\usepackage{subfiles}% pour inclure d'autre fichier
+\usepackage{hyperref} % Créer des liens et des signets
+\hypersetup{
+colorlinks=true, %colorise les liens
+breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+urlcolor= blue, %couleur des hyperliens
+linkcolor= black, %couleur des liens internes(dans la table des matiere)
+citecolor=black, %couleur des références
+}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{pifont}
+
+\addtolength{\textwidth}{3cm} % Marges moins larges
+\addtolength{\oddsidemargin}{-1.5cm} % Recentrage
+
+\title{}
+\author{} % indique l'auteur 
+\date{}
+
+
+\begin{document}
+%-----------------------------------------------------------------------
+\hrule
+\begin{center}
+\Huge {\textsc{CULTUR'ADVISOR - Développement d'une plateforme}}
+\end{center}
+\hrule
+\vspace{10mm}
+\begin{center}
+\Large \textsc{Master 2 IMIS \\ Année 2022-2023}
+\end{center}
+\vspace{10mm}
+\begin{figure}[H]
+\hspace{12mm}
+\includegraphics[scale = 1.2]{images/logo.png}
+\end{figure}
+\begin{figure}[H]
+\hspace{30mm}
+\includegraphics[scale = 0.3]{images/logo_dill.png}
+\end{figure}
+\begin{center}
+\vfill{\Large \textsc{ Présenté par : Barodine Anaël, Mbelek-Nouga Paul-Dubien, TESSIER Adrien, Ververke Xavier \\ Encadré par : Tandjaoui Rosa et Hakim Aoudia}}
+\end{center}
+\newpage
+%-----------------------------------------------------------------------
+\vspace*{\stretch{1}}
+\begin{center}
+\Large\bfseries
+\title -Remerciements
+\end{center}
+\hspace{4.5mm} 
+Tout d'abord, nous tenons à remercier Rosa Tandjaoui, notre mentor, et Matthieu Exbrayat notre encadrant universitaire de nous avoir accompagnés et guidés pour ce projet.
+
+Nous voulons aussi remercier toutes les personnes qui ont contribué au succès de ce projet et qui nous ont aidés lors de la rédaction de ce rapport.
+\vspace*{\stretch{1}}
+\newpage
+%-----------------------------------------------------------------------
+\tableofcontents
+\newpage %aller a la page suivante
+%-----------------------------------------------------------------------
+\section{contexte du projet}
+À la croisée de l’agenda culturel, du média, du magazine et du réseau social, CulturAdvisor est un espace de productions, de consultations et d’échanges autour de la culture. \\
+Son objectif est de faciliter l’accès à la culture en aidant les acteurs à trouver de nouveaux publics, améliorer leur visibilité, augmenter leur fréquentation et les publics à trouver l’expérience culturelle qui leur ressemble, leur correspond.
+
+
+\section{organisation de l'équipe}
+Nous avons d'abord commencé par se répartir les différentes taches du projet.
+
+\section{Projet}
+Afin de réaliser ce projet, nous avons découper le projet en plusieurs taches.
+
+\subsection{Mis en place du projet}
+Premièrement, nous avons commencé par choisir un environnement de travail. \\
+Nous avons choisit le langage Python et le framework Flask.
+
+\subsection{Récupération des données}
+Une fois le serveur Flask mis en place, il faut maintenant pouvoir récupérer les différentes données disponible.
+\subsection{Normalisation des données}
+Après avoir récupérer ces données, nous avons du les normaliser.
+
+\subsection{requêtes}
+Nous avons par la suite fait des requêtes...
+
+\end{document}
