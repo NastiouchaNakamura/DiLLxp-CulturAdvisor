@@ -67,7 +67,7 @@ def hello_world():  # put application's code here
     print(resultat)
 
     # créer un fichier csv des données
-    result.to_csv('culture.csv', sep ='\t')
+    result.to_csv('culture.csv', sep ='π')
     
     return 'Hello World!'
 
