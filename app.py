@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import sqlite3
 import csv
+import mysql.connector
 app = Flask(__name__)
 
 
@@ -68,8 +69,32 @@ def hello_world():  # put application's code here
 
     # créer un fichier csv des données
     result.to_csv('culture.csv', sep ='\t')
+
+    # rempli une base de données SQL à partir du csv
+    csv_to_db()
     
     return 'Hello World!'
+
+
+def csv_to_db():
+    sql_connection = mysql.connector.Connect(
+        host="localhost",
+        user="culturAdvisor",
+        password="culturAdvisor"
+    )
+    with open('culture.csv', 'r') as file:
+        rows = csv.reader(file, delimiter='π')
+        insert_req = "INSERT INTO culture_elements VALUES (%, %, %);"
+        for row in rows:
+            replace_list = []
+            for value in row:
+                if value == "":
+                    replace_list.append(None)
+                else:
+                    replace_list.append(value)
+            values = tuple(replace_list)
+            sql_connection.execute(insert_req, values)
+    return
 
 
 if __name__ == '__main__':
@@ -78,7 +103,7 @@ if __name__ == '__main__':
 
 
     """ nom des colonnes :
-    ['source', 'titre', 'description', 'site_internet', 'identifiant', 'code_postal', 'geolocalisation', 'adresse', 'commune', 'domaine',
+    ['origine', 'titre', 'description', 'site_internet', 'identifiant', 'code_postal', 'geolocalisation', 'adresse', 'commune', 'domaine',
        'organisme', 'public_cible', 'temps_activite', 'rattachement_organisme', 'types_ressource', 'activite', 'perenite_ressource',
        'niveau_scolaire_enfant', 'contenue_adapte', 'adresse_mail', 'couverture_geographique', 'type_de_producteur', 'direction',
        'mots_cles', 'formats', 'frequence_de_mise_a_jour', 'volumetrie', 'statut_ouverture', 'date_de_mise_a_jour', 'actif_inactif',
