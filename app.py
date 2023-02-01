@@ -68,7 +68,7 @@ def hello_world():  # put application's code here
     print(resultat)
 
     # créer un fichier csv des données
-    result.to_csv('culture.csv', sep ='\t')
+    result.to_csv('culture.csv', sep ='π')
 
     # rempli une base de données SQL à partir du csv
     csv_to_db()
