@@ -64,8 +64,8 @@ def hello_world():  # put application's code here
     print(result.columns)
 
     # afficher toute les valeurs d'une colonne
-    resultat = result.statut_ouverture.value_counts()
-    print(resultat)
+    #resultat = result.statut_ouverture.value_counts()
+    #print(resultat)
 
     # créer un fichier csv des données
     result.to_csv('culture.csv', sep ='π')
@@ -79,8 +79,9 @@ def hello_world():  # put application's code here
 def csv_to_db():
     sql_connection = mysql.connector.Connect(
         host="localhost",
-        user="culturAdvisor",
-        password="culturAdvisor"
+        r="culturAdvisor",
+        password="culturAdvisor",
+        port="3306"
     )
     with open('culture.csv', 'r') as file:
         rows = csv.reader(file, delimiter='π')
@@ -94,7 +95,7 @@ def csv_to_db():
                     replace_list.append(value)
             values = tuple(replace_list)
             sql_connection.execute(insert_req, values)
-    return
+    return sql_connection
 
 
 if __name__ == '__main__':

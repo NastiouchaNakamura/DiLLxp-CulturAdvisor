@@ -38,18 +38,24 @@ citecolor=black, %couleur des références
 \begin{center}
 \Large \textsc{Master 2 IMIS \\ Année 2022-2023}
 \end{center}
-\vspace{10mm}
+\vspace{15mm}
 \begin{figure}[H]
-\hspace{12mm}
-\includegraphics[scale = 1.2]{images/logo.png}
+\hspace{-10mm}
+\includegraphics[scale = 1.7]{images/logo.png}
 \end{figure}
-\begin{figure}[H]
-\hspace{30mm}
-\includegraphics[scale = 0.3]{images/logo_dill.png}
-\end{figure}
+\vspace{30mm}
+
 \begin{center}
 \vfill{\Large \textsc{ Présenté par : Barodine Anaël, Mbelek-Nouga Paul-Dubien, TESSIER Adrien, Ververke Xavier \\ Encadré par : Tandjaoui Rosa et Hakim Aoudia}}
 \end{center}
+\begin{figure}[H]
+\hspace{-0mm}
+\includegraphics[scale = 0.4]{images/logo_orleans.png}
+\hspace{10mm}
+\includegraphics[scale = 0.4]{images/logo1.png}
+\hspace{10mm}
+\includegraphics[scale = 0.15]{images/logo_dill.png}
+\end{figure}
 \newpage
 %-----------------------------------------------------------------------
 \vspace*{\stretch{1}}
@@ -69,25 +75,43 @@ Nous voulons aussi remercier toutes les personnes qui ont contribué au succès 
 %-----------------------------------------------------------------------
 \section{contexte du projet}
 À la croisée de l’agenda culturel, du média, du magazine et du réseau social, CulturAdvisor est un espace de productions, de consultations et d’échanges autour de la culture. \\
-Son objectif est de faciliter l’accès à la culture en aidant les acteurs à trouver de nouveaux publics, améliorer leur visibilité, augmenter leur fréquentation et les publics à trouver l’expérience culturelle qui leur ressemble, leur correspond.
+En France, il n'existe pas de base de données regroupant l'ensemble des produits sulturels du territoire. Il existe bien de telles bases mais elles sont restreintes à de plus petites zons géographiques. Tout cela rend plus difficile pour le public de les découvrir. \\
+L'objectif de l'entreprise est donc de faciliter l’accès à la culture en aidant les acteurs à trouver de nouveaux publics, améliorer leur visibilité, augmenter leur fréquentation et pour le public, à trouver l’expérience culturelle qui leur ressemble, leur correspond.
 
 
 \section{organisation de l'équipe}
-Nous avons d'abord commencé par se répartir les différentes taches du projet.
+Afin de mener ce projet à bien, nous avons d'abord commencé par se répartir les différentes taches du projet qui sont de récupérer l'ensemble des données disponible, les uniformiser, en faire une base de données, puis pouvoir faire des requêtes sur ces données.\\
+Nous avons utilisé Watsapp pour être en contact avec notre mentor.
+
 
 \section{Projet}
-Afin de réaliser ce projet, nous avons découper le projet en plusieurs taches.
+
 
 \subsection{Mis en place du projet}
-Premièrement, nous avons commencé par choisir un environnement de travail. \\
-Nous avons choisit le langage Python et le framework Flask.
+Premièrement, nous avons commencé par choisir un environnement de travail.\\
+Nous avons choisit le langage Python et le framework Flask. (anael si tu sait comment bien l'expliquer)
+
+\subsection{Création du serveur Flask}
+(anael)
 
 \subsection{Récupération des données}
-Une fois le serveur Flask mis en place, il faut maintenant pouvoir récupérer les différentes données disponible.
-\subsection{Normalisation des données}
-Après avoir récupérer ces données, nous avons du les normaliser.
+Une fois le serveur Flask mis en place, il faut maintenant pouvoir récupérer les différentes données disponible.\\
+Nous avons eu par notre mentor une liste d'API contenant des différents produits culturels à récupérer.\\
+Nous avons commencer par analyser ces différentes base de données puis nous avons récupérer chaque colonne.\\
+\textbf{----Mettre un ou deux résultat d'une base de données----}
 
-\subsection{requêtes}
+\subsection{Normalisation des données}
+Après avoir récupérer ces données, nous avons du les normaliser.\\
+Pour cela, nous avons utiliser un DataFrame afin de mettre tout les tableaux récolté dans un seul.\\
+Pour commencer, on a regardé les colonne qui contenait les mêmes choses puis on a changer les noms de colonnes afin que chaque tableaux de données qui contenait les memes données ait le meme nom de colonnes afin qu'il soit normalisé.
+
+
+\subsection{Mise sous forme de base de données}
 Nous avons par la suite fait des requêtes...
+
+\subsection{Requêtes}
+
+\section{Conclusion}
+
 
 \end{document}
