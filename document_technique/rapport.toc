@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {3.1}Mis en place du projet}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Création du serveur Flask}{4}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Récupération des données}{4}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Normalisation des données}{4}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Normalisation des données}{5}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Mise sous forme de base de données}{5}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Requêtes}{5}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Conclusion}{5}{section.4}%
+\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}%

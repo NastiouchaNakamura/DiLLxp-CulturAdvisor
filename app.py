@@ -47,15 +47,15 @@ def hello_world():  # put application's code here
     df4 = pd.DataFrame(res4)
     df5 = pd.DataFrame(res5)
     # afficher les dataframes
-    """print(df1) 
+    print(df1) 
     print(df2) 
     print(df3) 
     print(df4) 
     print(df5) 
-"""
+
 
     # concatener les BDD et afficher le dataframe final
-    frames = [df1, df2, df3,df4,df5]
+    frames = [df1, df2, df3,df5,df4]
     result = pd.concat(frames)
     print(result)
 
@@ -71,12 +71,12 @@ def hello_world():  # put application's code here
     result.to_csv('culture.csv', sep ='π')
 
     # rempli une base de données SQL à partir du csv
-    csv_to_db()
+    #csv_to_db()
     
     return 'Hello World!'
 
 
-def csv_to_db():
+'''def csv_to_db():
     sql_connection = mysql.connector.Connect(
         host="localhost",
         r="culturAdvisor",
@@ -97,7 +97,7 @@ def csv_to_db():
             sql_connection.execute(insert_req, values)
     return sql_connection
 
-
+'''
 if __name__ == '__main__':
     app.run()
 
