@@ -36,9 +36,9 @@ citecolor=black,
 \vspace{15mm}
 \begin{figure}[H]
 \hspace{-10mm}
-\includegraphics[scale = 1.7]{images/logo.png}
+\includegraphics[scale = 0.5]{images/logo_advisor.png}
 \end{figure}
-\vspace{30mm}
+\vspace{20mm}
 
 \begin{center}
 \vfill{\Large \textsc{ Présenté par : Barodine Anaël, Mbelek-Nouga Paul-Dubien, TESSIER Adrien, Ververke Xavier \\ Encadré par : Tandjaoui Rosa et Hakim Aoudia}}
@@ -103,9 +103,8 @@ Nous avons choisit le langage Python et le framework Flask. (anael si tu sait co
 (anael)
 
 \subsection{Récupération des données}
-Une fois le serveur Flask mis en place, il faut maintenant pouvoir récupérer les différentes données disponible.\\
-Nous avons eu par notre mentor une liste d'API contenant des différents produits culturels à récupérer.\\
-Nous avons commencer par analyser ces différentes base de données puis nous avons récupérer chaque colonne.\\
+Une fois le serveur Flask mis en place, il faut maintenant pouvoir récupérer les différentes données disponible. Pour cela, nous avons eu par notre mentor une liste d'API contenant des différents produits culturels à récupérer et nous avons commencer par analyser ces différentes base de données.\\
+Ensuite, nous avons récupérés chaque colonnes de ces bases de données puis nous en avons fait un tableau comme nous montre les 2 images ci dessous qui correspondent à 2 bases de données que nous avons récupérés.\\
 \begin{figure}[H]
 \hspace{-25mm}
 \includegraphics[scale = 0.44]{images/culturecheznous.png}
@@ -120,7 +119,9 @@ Nous avons commencer par analyser ces différentes base de données puis nous av
 \subsection{Normalisation des données}
 Après avoir récupérer ces données, nous avons du les normaliser.\\
 Pour cela, nous avons utiliser un DataFrame afin de mettre tout les tableaux récolté dans un seul.\\
-Pour commencer, on a regardé les colonne qui contenait les mêmes choses puis on a changer les noms de colonnes afin que chaque tableaux de données qui contenait les memes données ait le meme nom de colonnes afin qu'il soit normalisé.
+Pour commencer, nous avons regardé les colonnes qui contenait les mêmes données puis on a changer les noms de colonnes afin que chaque tableaux de données qui contenait les mêmes données ait le même nom de colonnes afin qu'il soit normalisé.\\
+On a donc pu réduire le nombre de colonnes dans ce dernier Datataframe ci dessous.\\
+Une fois qu'on a eu ce Dataframe avec toutes les données normalisé, nous l'avons transformés en fichier CSV Pour pouvoir ensuite récupérer ce CSV et en faire une base de données.
 \begin{figure}[H]
 \hspace{-25mm}
 \includegraphics[scale = 0.35]{images/dataframe_final.png}
