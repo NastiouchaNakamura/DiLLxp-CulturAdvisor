@@ -47,11 +47,11 @@ def hello_world():  # put application's code here
     df4 = pd.DataFrame(res4)
     df5 = pd.DataFrame(res5)
     # afficher les dataframes
-    print(df1) 
-    print(df2) 
-    print(df3) 
-    print(df4) 
-    print(df5) 
+    #print(df1) 
+    #print(df2) 
+    #print(df3) 
+    #print(df4) 
+    #print(df5) 
 
 
     # concatener les BDD et afficher le dataframe final
@@ -61,7 +61,7 @@ def hello_world():  # put application's code here
 
     #print(result['titre'])
     # afficher toute les colonnes du dataframe
-    print(result.columns)
+    #print(result.columns)
 
     # afficher toute les valeurs d'une colonne
     #resultat = result.statut_ouverture.value_counts()
@@ -76,10 +76,10 @@ def hello_world():  # put application's code here
     return 'Hello World!'
 
 
-'''def csv_to_db():
+def csv_to_db():
     sql_connection = mysql.connector.Connect(
         host="localhost",
-        r="culturAdvisor",
+        user="culturAdvisor",
         password="culturAdvisor",
         port="3306"
     )
@@ -97,7 +97,7 @@ def hello_world():  # put application's code here
             sql_connection.execute(insert_req, values)
     return sql_connection
 
-'''
+
 if __name__ == '__main__':
     app.run()
 

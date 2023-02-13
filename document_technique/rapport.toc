@@ -8,6 +8,6 @@
 \contentsline {subsection}{\numberline {3.2}Création du serveur Flask}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Récupération des données}{6}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Normalisation des données}{7}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Mise sous forme de base de données}{7}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Requêtes}{7}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Conclusion}{7}{section.4}%
+\contentsline {subsection}{\numberline {3.5}Mise sous forme de base de données}{8}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Requêtes}{8}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Conclusion}{8}{section.4}%
